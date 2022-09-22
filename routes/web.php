@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PlayerController;
+use App\Http\Livewire\Players;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +15,9 @@ use App\Http\Controllers\PlayerController;
 */
 
 Route::get('/', function () {
-    return view('');
+    return view('livewire.players.index');
 });
 
 //Products
-Route::get('/players', [PlayerController::class, 'index'])->name('players.index');
+Route::get('/players', [Players\Index::class, 'render'])->name('players.index');
+Route::get('/players/create', [Players\Create::class, 'render'])->name('players.create');

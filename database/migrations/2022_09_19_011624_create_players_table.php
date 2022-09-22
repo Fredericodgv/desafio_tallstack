@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->integer('age');
             $table->string('nacionality');
-            $table->integer('victories');
-            $table->integer('defeats');
-            $table->string('teams');
+            $table->integer('victories')->default(0);
+            $table->integer('defeats')->default(0);
+            $table->string('team')->nullable();
             $table->timestamps();
         });
     }

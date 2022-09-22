@@ -8,6 +8,8 @@
     <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
 
     <title>{{ config('app.name', 'Code-Play') }}</title>
+
+    @livewireStyles
 </head>
 
 <body>
@@ -26,6 +28,8 @@
             {{ $slot }}
         </main>
     </div>
+
+    @livewireScripts
 </body>
 
 </html>
