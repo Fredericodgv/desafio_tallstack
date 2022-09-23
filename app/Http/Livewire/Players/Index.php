@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Players;
 
 use Livewire\Component;
 use App\Models\Player;
+use App\Models\Team;
 
 class Index extends Component
 {
@@ -13,7 +14,7 @@ class Index extends Component
     public $nacionality;
     public $victories;
     public $defeats;
-    public $team;
+    public $team_id;
 
     public $view = false;
     public $edit = false;
@@ -56,7 +57,7 @@ class Index extends Component
         $this->name = $player->name;
         $this->age = $player->age;
         $this->nacionality = $player->nacionality;
-        $this->team = $player->team;
+        $this->team_id = $player->team_id;
         $this->victories = $player->victories;
         $this->defeats = $player->defeats;
     }
@@ -69,7 +70,7 @@ class Index extends Component
             'name' => $this->name,
             'age' => $this->age,
             'nacionality' => $this->nacionality,
-            'team' => $this->team,
+            'team_id' => $this->team_id,
             'victories' => $this->victories,
             'defeats' => $this->defeats,
         ]);
@@ -87,7 +88,7 @@ class Index extends Component
         $this->name = $player->name;
         $this->age = $player->age;
         $this->nacionality = $player->nacionality;
-        $this->team = $player->team;
+        $this->team_id = $player->team_id;
         $this->victories = $player->victories;
         $this->defeats = $player->defeats;
     }
@@ -101,7 +102,7 @@ class Index extends Component
             'name' => $this->name,
             'age' => $this->age,
             'nacionality' => $this->nacionality,
-            'team' => $this->team,
+            'team_id' => $this->team_id,
             'victories' => $this->victories,
             'defeats' => $this->defeats,
         ]);
@@ -118,6 +119,7 @@ class Index extends Component
     public function render()
     {
         $players = Player::all();
-        return view('livewire.players.index', compact('players'))->layout('layouts.confia');
+        $team = Team::all();
+        return view('livewire.players.index', compact('players', 'team'))->layout('layouts.confia');
     }
 }

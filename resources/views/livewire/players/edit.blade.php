@@ -36,12 +36,16 @@
                                 <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="col-span-2">
-                            <label for="team">Time</label>
-                            <input type="text" id="team" wire:model="team">
-                            @error('team')
-                                <span class="error">{{ $message }}</span>
-                            @enderror
+                        <div class="col-span-3">
+                            <label for="team_id">Time</label>
+                            <select id="team_id" wire:model="team_id">
+                                @foreach ($team as $team)
+                                    <option value="{{ $team->id }}">{{ $team->name }}</option>
+                                @endforeach
+                            </select>
+                                @error('team_id')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                         </div>
                         <div class="col-span-2">
                             <label for="nacionality">Nacionalidade</label>

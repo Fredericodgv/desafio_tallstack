@@ -20,8 +20,7 @@
                 <!-- Modal body -->
                 <div class="p-6 space-y-6 flex items-center">
 
-                    <form wire:submit.prevent="submit"
-                        class="space-y-8 divide-y divide-gray-200">
+                    <form wire:submit.prevent="submit" class="space-y-8 divide-y divide-gray-200">
                         <div class="col-span-3">
                             <label for="name">Nome</label>
                             <input type="text" id="name" autocomplete="name" wire:model="name">
@@ -36,12 +35,16 @@
                                 <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="col-span-2">
-                            <label for="team">Time</label>
-                            <input type="text" id="team" wire:model="team">
-                            @error('team')
-                                <span class="error">{{ $message }}</span>
-                            @enderror
+                        <div class="col-span-3">
+                            <label for="team_id">Time</label>
+                            <select id="team_id" wire:model="team_id">
+                                @foreach ($team as $team)
+                                    <option value="{{ $team->id }}">{{ $team->name }}</option>
+                                @endforeach
+                            </select>
+                                @error('team_id')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
                         </div>
                         <div class="col-span-2">
                             <label for="nacionality">Nacionalidade</label>

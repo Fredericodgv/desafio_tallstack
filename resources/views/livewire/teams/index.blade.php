@@ -25,7 +25,7 @@
                         <thead class="bg-gray-50 border-b-2 border-gray-200">
                             <tr>
                                 <th class="p-3 text-sm font-semibold tracking-wide text-left">Nome</th>
-                                <th class="p-3 text-sm font-semibold tracking-wide text-left w-35">Idade</th>
+                                <th class="p-3 text-sm font-semibold tracking-wide text-left w-35">País</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -35,7 +35,7 @@
 
                                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ $team->name }}
                                     </td>
-                                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ $team->age }}
+                                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ $team->country }}
                                     </td>
 
                                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">

@@ -23,3 +23,5 @@ Route::get('/players', Players\Index::class, )->name('players.index');
 //Teams
 Route::get('/teams', Teams\Index::class)->name('teams.index');
 
+//Ranking
+Route::get('/ranking', Teams\Ranking::class)->name('ranking.index');

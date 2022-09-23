@@ -11,7 +11,7 @@
                     <x-nav-link :active="request()->routeIs('teams.index')" href="{{ route('teams.index') }}">
                         {{ __('Times') }}
                     </x-nav-link>
-                    <x-nav-link :active="request()->routeIs('teams.index')" href="{{ route('teams.index') }}">
+                    <x-nav-link :active="request()->routeIs('ranking.index')" href="{{ route('ranking.index') }}">
                         {{ __('Ranking') }}
                     </x-nav-link>
                 </div>
