@@ -9,7 +9,7 @@
                 <!-- Modal header -->
                 <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                        Adicionar Jogador
+                        Adicionar Time
                     </h3>
                     <button type="button"
                         class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -20,8 +20,7 @@
                 <!-- Modal body -->
                 <div class="p-6 space-y-6 flex items-center">
 
-                    <form wire:submit.prevent="submit"
-                        class="space-y-8 divide-y divide-gray-200">
+                    <form wire:submit.prevent="submit" class="space-y-8 divide-y divide-gray-200">
                         <div class="col-span-3">
                             <label for="name">Nome</label>
                             <input type="text" id="name" autocomplete="name" wire:model="name">
@@ -30,23 +29,16 @@
                             @enderror
                         </div>
                         <div class="col-span-1">
-                            <label for="age">Idade</label>
-                            <input type="number" id="age" autocomplete="age" wire:model="age">
-                            @error('age')
+                            <label for="country">País</label>
+                            <input type="text" id="country" autocomplete="country" wire:model="country">
+                            @error('country')
                                 <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="col-span-2">
-                            <label for="team">Time</label>
-                            <input type="text" id="team" wire:model="team">
-                            @error('team')
-                                <span class="error">{{ $message }}</span>
-                            @enderror
-                        </div>
-                        <div class="col-span-2">
-                            <label for="nacionality">Nacionalidade</label>
-                            <input type="text" id="nacionality" wire:model="nacionality">
-                            @error('nacionality')
+                            <label for="points">Pontuação</label>
+                            <input type="number" id="points" wire:model="points">
+                            @error('points')
                                 <span class="error">{{ $message }}</span>
                             @enderror
                         </div>

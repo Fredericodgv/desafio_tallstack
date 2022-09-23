@@ -6,15 +6,15 @@
             <button x-on:click="open = !open"
                 class="my-2 bg-blue-500 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded"
                 wire:click="resetInputs()">
-                Adicionar novo jogador
+                Adicionar novo Time
             </button>
             <div x-show="open">
                 @if ($view)
-                    @include('livewire.players.view')
+                    @include('livewire.teams.view')
                 @elseif ($edit)
-                    @include('livewire.players.edit')
+                    @include('livewire.teams.edit')
                 @else
-                    @include('livewire.players.create')
+                    @include('livewire.teams.create')
                 @endif
             </div>
 
@@ -30,28 +30,28 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
-                            @foreach ($players as $player)
+                            @foreach ($teams as $team)
                                 <tr class="bg-white border-b transition durante-300 ease-in-out hover:bg-gray-100 ">
 
-                                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ $player->name }}
+                                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ $team->name }}
                                     </td>
-                                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ $player->age }}
+                                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ $team->age }}
                                     </td>
 
                                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
                                         <div class="inline-flex">
                                             <button
-                                                class="bg-emerald-400 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded-l" x-on:click="open = !open" wire:click="view({{ $player->id }})">
+                                                class="bg-emerald-400 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded-l" x-on:click="open = !open" wire:click="view({{ $team->id }})">
                                                 Visualizar
                                             </button>
                                             <button
                                                 class="ml-2 bg-blue-500 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded-r"
-                                                wire:click="edit({{ $player->id }})" x-on:click="open=!open">
+                                                wire:click="edit({{ $team->id }})" x-on:click="open=!open">
                                                 Editar
                                             </button>
                                             <button
                                                 class="ml-2 bg-red-500 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded-r"
-                                                onclick="return confirm('Tem certeza que deseja remover {{ addslashes($player->name) }}?') || event.stopImmediatePropagation()" wire:click.prevente="delete({{ $player->id }})">
+                                                onclick="return confirm('Tem certeza que deseja remover {{ addslashes($team->name) }}?') || event.stopImmediatePropagation()" wire:click.prevente="delete({{ $team->id }})">
                                                 Excluir
                                             </button>
                                         </div>

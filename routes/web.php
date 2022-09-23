@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Players;
+use App\Http\Livewire\Teams;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,11 @@ use App\Http\Livewire\Players;
 |
 */
 
-Route::get('/', function () {
-    return view('livewire.players.index');
-});
+// Route::get('/', Teste::class)->name('teste');
 
-//Products
-Route::get('/players', [Players\Index::class, 'render'])->name('players.index');
-Route::get('/players/create', [Players\Create::class, 'render'])->name('players.create');
+//Players
+Route::get('/players', Players\Index::class, )->name('players.index');
+
+//Teams
+Route::get('/teams', Teams\Index::class)->name('teams.index');
+
